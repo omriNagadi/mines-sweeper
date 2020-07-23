@@ -10,8 +10,8 @@ var HINT = '💡';
 
 var gBoard;
 var gLevel = {
-    size: 9,
-    mines: 1
+    size: 12,
+    mines: 30
 }
 var gGame = {
     isOn: false,
