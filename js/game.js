@@ -11,7 +11,7 @@ var HINT = '💡';
 var gBoard;
 var gLevel = {
     size: 4,
-    mines: 2
+    mines: 1
 }
 var gGame = {
     isOn: false,
@@ -217,6 +217,7 @@ function cellClicked(elCell, i, j) {
             gTimerIsOn = false;
         }
         // if (isFirstClick) gGame.shownCellsCount--;
+
         console.log('cell.minesAroundCount', cell.minesAroundCount);
 
 
@@ -269,10 +270,10 @@ function revealNegs(cell) {
             } else if (!currCell.isShown) gGame.shownCellsCount++;
             console.log('gGame.shownCellsCount:', gGame.shownCellsCount);
             gBoard[i][j].isShown = true;
+            // revealNegs(currCell);
 
         }
     }
-    console.log(gBoard);
 }
 
 
@@ -364,11 +365,9 @@ function useHint() {
             }
         }
         var rndCell = counterArr.splice(getRandomIntInclusive(0, counterArr.length - 1), 1)[0]
-        // console.log(rndCell);
         for (var i = rndCell.i - 1; i <= rndCell.i + 1; i++) {
             if (i < 0 || i === gLevel.size) continue;
             for (var j = rndCell.j - 1; j <= rndCell.j + 1; j++) {
-                // if (i === rndCell.i && j === rndCell.j) continue;
                 if (j < 0 || j === gLevel.size) continue;
                 var currCell = gBoard[i][j];
                 if (currCell.isShown) continue;
