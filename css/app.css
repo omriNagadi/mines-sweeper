@@ -4,32 +4,66 @@ body{
     padding: 0;
     background-color: rgb(15, 168, 219);
     text-align: center;
+    background-image: url(../img/Beach-Sand-Wallpaper-HD.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .headline {
+    font-size: large;
+    font-family: 'Courier New';
     display: block;
-    /* position: absolute; */
-    height: 100px;
+    height: 70px;
     width: 100vw;
-    margin-bottom:10px ;
-    background: blue;
-    padding: 20px;
 }
-
+.secondary-line{
+    font-size: large;
+    font-family: 'Courier New';
+}
+.pressed-cell{
+    background-color: blue;
+    opacity: 0.8;
+}
+.btn {
+    background-color: transparent; 
+    border: none;
+    padding: 12px 16px; /* Some padding */
+    font-size: 20px;
+    cursor: pointer; /* Mouse pointer on hover */
+    outline:none;
+  }
 
 .board{
     color: black;
     /* margin-left: 50%; */
     margin: 0 auto;
-
+}
+.cell:hover{
+    background-color: rgb(128, 128, 128);
+    transition: .2s;
+    opacity: 0.6;
+    
 }
 .cell {
     width: 40px;
     height: 40px;
     text-align: center;
     font-size: 1.5em;
+    cursor: pointer;
+    font-size: 28px;
+
   }
+.smiley{
+    font-size: 35px;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    outline:none;
+}
 
-
+.time {
+    font-size: 25px;
+}
+  
 /* .modal {
     background-color: orange;
     padding: 20px;

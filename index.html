@@ -12,14 +12,18 @@
     <div class="headline">
         <h1>The Mine's Sweeper!</h1>
     </div>
-    <!-- <div class="board-container">
-    </div> -->
-    <h2>You have <span class="marks-left"></span> marks left! </h2>
-    <table border="2" class="board">
-        <tbody class="board-cells">
-        </tbody>
-    </table>
-    <button onclick="initGame()">RESTART</button>
+    <button class="smiley" onclick ="initGame()">😁</button>
+    <div class="total-board">
+        <h3 class="secondary-line"><span class="time">00:00</span></h3>
+        <h2 class="secondary-line">You have <span class="marks-left"></span> marks left! </h2>
+        <button class="btn hint1" onclick="useHint()">💡</button><button class="btn hint2"
+                onclick="useHint()">💡</button><button class="btn hint3" onclick="useHint()">💡</button>
+        <table border="2" class="board">
+            <tbody class="board-cells">
+            </tbody>
+        </table>
+        <!-- <button onclick="initGame()">RESTART</button> -->
+    </div>
     <!-- <div class="modal"></div> -->
 
 
