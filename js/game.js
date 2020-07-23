@@ -10,8 +10,8 @@ var HINT = '💡';
 
 var gBoard;
 var gLevel = {
-    size: 12,
-    mines: 30
+    size: 4,
+    mines: 2
 }
 var gGame = {
     isOn: false,
@@ -334,10 +334,10 @@ function setTimer() {
         var timeArr = timeTxt.split(':')
         var min = timeArr[0];
         var sec = timeArr[1];
-        if (sec === 59) {
+        if (sec > 59) {
             min++;
             if (min < 10) min = '0' + min;
-            sec = 0;
+            sec = '0';
         } else {
             sec++;
             if (sec < 10) sec = '0' + sec
@@ -349,7 +349,7 @@ function setTimer() {
 }
 function resetTimer() {
     var elTime = document.querySelector('.time')
-    elTime.innerHTML = `00:00`
+    elTime.innerHTML = '00' + ':' + '00';
 }
 var gBtnNum = 1;
 function useHint() {
@@ -377,7 +377,7 @@ function useHint() {
             }
         }
         gHintedCell = rndCell;
-        
+
         var elBtn1 = document.querySelector('.hint1');
         var elBtn2 = document.querySelector('.hint2');
         var elBtn3 = document.querySelector('.hint3');
@@ -390,7 +390,7 @@ function useHint() {
                 break;
             case 3:
                 elBtn3.disabled = true;
-            break;
+                break;
         }
         gBtnNum++;
         closeHintCells()
@@ -414,8 +414,26 @@ function closeHintCells() {
                 if (currCell.isMarked) elCurrCell.innerText = FLAG;
             }
         }
-        
+
         // document.querySelectorAll('.btn').disabled = false;
     }, 1500)
     if (x === 1) clearTimeout(gHintInterval);
+}
+
+function easy() {
+    gLevel.size = 4;
+    gLevel.mines = 15;
+    initGame();
+}
+
+function medium() {
+    gLevel.size = 8;
+    gLevel.mines = 12;
+    initGame();
+}
+
+function hard() {
+    gLevel.size = 12;
+    gLevel.mines = 30;
+    initGame();
 }
