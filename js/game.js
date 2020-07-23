@@ -32,11 +32,11 @@ function initGame() {
     gBoard = buildEmptyBoard();
     gGame.isOn = true;
     gGame.flaggedCellsCount = 0;
+    gMarksLeft = gLevel.mines;
     var elMarkLeft = document.querySelector('.marks-left')
     elMarkLeft.innerText = gMarksLeft;
     gMarkedMine = 0;
     gGame.shownCellsCount = 0;
-    gMarksLeft = gLevel.mines;
     gHintedCell = null;
     gElSmiley.innerHTML = HAPPY_S;
     resetTimer();
@@ -422,7 +422,7 @@ function closeHintCells() {
 
 function easy() {
     gLevel.size = 4;
-    gLevel.mines = 15;
+    gLevel.mines = 2;
     initGame();
 }
 
